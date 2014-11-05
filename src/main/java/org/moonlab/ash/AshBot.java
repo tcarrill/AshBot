@@ -43,6 +43,8 @@ public abstract class AshBot implements Runnable {
         registerCommand(new RemindBotCommand(this));
         registerCommand(new SeenBotCommand(this));
         registerCommand(new UptimeBotCommand());
+        registerCommand(new MessageBotCommand(this));
+
     }
 
     public Client getClient() {
@@ -224,7 +226,7 @@ public abstract class AshBot implements Runnable {
     public boolean joinChannel(String channel) {
         if (sendCommand(ircCommand.joinChannel(channel))) {
             if (joinedChannels == null) {
-                joinedChannels = new ArrayList<String>();
+                joinedChannels = new ArrayList<>();
             }
 
             joinedChannels.add(channel);

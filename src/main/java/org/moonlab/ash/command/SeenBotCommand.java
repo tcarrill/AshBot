@@ -43,4 +43,9 @@ public class SeenBotCommand extends BaseBotCommand implements IRCListener {
         String lastSeenMessage = nick + " last seen in " + channel + " at " + date + " saying " + message;
         lastSeenMap.put(nick.toLowerCase(), lastSeenMessage);
     }
+
+    @Override
+    public void onJoin(String channel, String nick, String login, String host, String message) {
+
+    }
 }

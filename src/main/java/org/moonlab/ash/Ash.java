@@ -1,5 +1,10 @@
 package org.moonlab.ash;
 
+import org.moonlab.ash.command.BotCommand;
+import org.moonlab.ash.command.IRCListener;
+
+import java.util.Map;
+
 public class Ash extends AshBot {
 
     public Ash(Client client) {
@@ -10,6 +15,13 @@ public class Ash extends AshBot {
     public void onJoin(String channel, String nick, String login, String host) {
         if (admins.contains(nick)) {
             sendCommand(ircCommand.giveOp(channel, nick));
+        }
+
+        for (Map.Entry<String, BotCommand> entry : commands.entrySet()) {
+            BotCommand command = entry.getValue();
+            if (command instanceof IRCListener) {
+                ((IRCListener) command).onJoin(channel, nick, login, host, null);
+            }
         }
     }
 

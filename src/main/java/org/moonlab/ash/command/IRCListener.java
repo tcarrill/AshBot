@@ -5,4 +5,5 @@ package org.moonlab.ash.command;
  */
 public interface IRCListener {
     public void onMessage(String channel, String nick, String login, String host, String message);
+    public void onJoin(String channel, String nick, String login, String host, String message);
 }
