@@ -42,12 +42,13 @@ public class WeatherBotCommand implements BotCommand {
 
             String output = response.getEntity(String.class);
             JsonElement root = new JsonParser().parse(output);
+            String name = root.getAsJsonObject().get("name").getAsString();
             String main = root.getAsJsonObject().get("weather").getAsJsonArray().get(0)
                     .getAsJsonObject()
                     .get("main")
                     .getAsString();
             String temp = root.getAsJsonObject().get("main").getAsJsonObject().get("temp").getAsString();
-            return main + " " + temp + "F";
+            return name + " Condition: " + main + " @ " + temp + "F";
         }
 
         return null;
