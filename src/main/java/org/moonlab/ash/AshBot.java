@@ -44,6 +44,7 @@ public abstract class AshBot implements Runnable {
         registerCommand(new SeenBotCommand(this));
         registerCommand(new UptimeBotCommand());
         registerCommand(new MessageBotCommand(this));
+        registerCommand(new WeatherBotCommand());
 
     }
 
