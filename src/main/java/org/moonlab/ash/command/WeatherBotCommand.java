@@ -48,7 +48,7 @@ public class WeatherBotCommand implements BotCommand {
                     .get("main")
                     .getAsString();
             String temp = root.getAsJsonObject().get("main").getAsJsonObject().get("temp").getAsString();
-            return name + " Condition: " + main + " @ " + temp + "F";
+            return name + ", " + main + " @ " + temp + "F";
         }
 
         return null;
