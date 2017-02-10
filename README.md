@@ -15,7 +15,12 @@ Set a reminder for yourself, the bot will deliver the message to you after the s
 remind 5 This is your 5 minute reminder
 ```
 
-Leave a message for user who is not in the channel, when they join the channel the bot will give them the message
+Leave a message for a user who is not in the channel, when they join the channel the bot will give them the message
 ```
 message <nick> This is the message
+```
+
+Last seen, find out when a user was last active and what their last message was
+```
+seen <nick>
 ```
