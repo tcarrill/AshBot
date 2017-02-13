@@ -10,7 +10,7 @@ Roll random dice, generate any combination of random numbers in the form of ``<n
 dice 1d6
 ```
 
-Set a reminder for yourself, the bot will deliver the message to you after the specified time in minutes expires
+Set a reminder for yourself, the bot will deliver the message to you after the specified time (in minutes) expires
 ```
 remind 5 This is your 5 minute reminder
 ```
